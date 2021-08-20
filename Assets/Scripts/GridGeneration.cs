@@ -10,7 +10,7 @@ public class GridGeneration : MonoBehaviour
     
     private void Start()
     {
-        GenerateGrid(3,1);
+        GenerateGrid(5,3);
     }   
 
     private void GenerateGrid(int sizeX, int sizeY)
@@ -20,9 +20,6 @@ public class GridGeneration : MonoBehaviour
 
         float startX = -(cellSizeX * (sizeX - 1) + _gapBetweenCells * (sizeX - 1)) / 2;
         float startY = -(cellSizeY * (sizeY - 1) + _gapBetweenCells * (sizeY - 1)) / 2;
-
-        Debug.Log(startX);
-        Debug.Log(startY);
 
         float currentX = startX;
         float currentY = startY;        
