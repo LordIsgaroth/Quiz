@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GridGeneration : MonoBehaviour
@@ -10,7 +8,7 @@ public class GridGeneration : MonoBehaviour
     
     private void Start()
     {
-        GenerateGrid(5,3);
+        GenerateGrid(3,3);
     }   
 
     private void GenerateGrid(int sizeX, int sizeY)
@@ -30,7 +28,7 @@ public class GridGeneration : MonoBehaviour
 
             for (int y = 0; y < sizeY; y++)
             {               
-                GameObject newTile = Instantiate(_cellPrefab, new Vector3(currentX + (cellSizeX * x), currentY + (cellSizeY * y), 0), _cellPrefab.transform.rotation);
+                GameObject newCell = Instantiate(_cellPrefab, new Vector3(currentX + (cellSizeX * x), currentY + (cellSizeY * y), 0), _cellPrefab.transform.rotation);
                 currentY += _gapBetweenCells;
             }
 
