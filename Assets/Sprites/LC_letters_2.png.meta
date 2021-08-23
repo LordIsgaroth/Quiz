@@ -1,7 +1,34 @@
 fileFormatVersion: 2
 guid: 82c6d1ea8e0095d4e85e27c6eacbe239
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3270655726746431581
+    second: LC_letters_2_2
+  - first:
+      213: -2983290644488427326
+    second: LC_letters_2_3
+  - first:
+      213: 5433449995169814141
+    second: LC_letters_2_4
+  - first:
+      213: -4447791616812998045
+    second: LC_letters_2_5
+  - first:
+      213: -9165466868132007793
+    second: LC_letters_2_6
+  - first:
+      213: -4461999128152558772
+    second: LC_letters_2_7
+  - first:
+      213: 7112752472869403061
+    second: LC_letters_2_8
+  - first:
+      213: -4252152113809563852
+    second: LC_letters_2_9
+  - first:
+      213: 4461586319009975920
+    second: LC_letters_2_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +68,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +102,252 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: LC_letters_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 228
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d8fab9e41d9f7a0800000000000000
+      internalID: -6342808464625005154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LC_letters_2_1
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 704
+        width: 215
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d39721065a06e2070800000000000000
+      internalID: 8083504644574312765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LC_letters_2_2
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 707
+        width: 249
+        height: 317
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5071570e04b36d20800000000000000
+      internalID: 3270655726746431581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LC_letters_2_3
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 707
+        width: 281
+        height: 317
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8658907f83996d0800000000000000
+      internalID: -2983290644488427326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LC_letters_2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 387
+        width: 316
+        height: 317
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76d1f2abfd776b40800000000000000
+      internalID: 5433449995169814141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LC_letters_2_5
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 387
+        width: 315
+        height: 317
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362a6e407154642c0800000000000000
+      internalID: -4447791616812998045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LC_letters_2_6
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 391
+        width: 393
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f803164b178bdc080800000000000000
+      internalID: -9165466868132007793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LC_letters_2_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 204
+        height: 317
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c433d520f6bc312c0800000000000000
+      internalID: -4461999128152558772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LC_letters_2_8
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 71
+        width: 279
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b979a860b295b260800000000000000
+      internalID: 7112752472869403061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LC_letters_2_9
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 71
+        width: 223
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f547d6e225df4c0800000000000000
+      internalID: -4252152113809563852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LC_letters_2_10
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 71
+        width: 255
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e055f5e1dbaed30800000000000000
+      internalID: 4461586319009975920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

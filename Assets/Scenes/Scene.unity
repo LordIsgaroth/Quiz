@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 1697496647}
   - component: {fileID: 1697496648}
   - component: {fileID: 1697496649}
+  - component: {fileID: 1697496650}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -333,8 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7bd46ebe7107b46833996382023c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardBundles:
-  - {fileID: 11400000, guid: da86c562f0a3a5c41bf8efbf7c495c99, type: 2}
 --- !u!114 &1697496649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,3 +356,17 @@ MonoBehaviour:
   _cellPrefab: {fileID: 377576594708217070, guid: 9345b6e790c3d17488da6a334161de34, type: 3}
   _gridBackground: {fileID: 283729470}
   _gapBetweenCells: 0.1
+--- !u!114 &1697496650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697496646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247acb09b13dbd54bb254c0cabaed680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardBundles:
+  - {fileID: 11400000, guid: da86c562f0a3a5c41bf8efbf7c495c99, type: 2}

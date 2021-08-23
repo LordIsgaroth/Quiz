@@ -1,22 +1,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(ICardBundleGetter))]
 public class GridLevelGenerator : MonoBehaviour, ILevelCreation
 {
     [SerializeField] private GridLevelData[] _levels;
     [SerializeField] private GameObject _cellPrefab;
     [SerializeField] private SpriteRenderer _gridBackground;
-    [SerializeField] private float _gapBetweenCells;    
+    [SerializeField] private float _gapBetweenCells;
 
+    private ICardBundleGetter _cardBundleGetter;
+    private List<GameObject> _cells = new List<GameObject>();
     private List<Card> _cards = new List<Card>();
+
+    public void Awake()
+    {
+        _cardBundleGetter = GetComponent<ICardBundleGetter>();
+    }
 
     public void CreateLevel(int number)
     {
         GridLevelData level = _levels[number];
-        GenerateGrid(level.GridRows, level.GridColumns);
+        ICardSelecting _cardSelector = new RandomUniqueCardSelector(_cardBundleGetter.ChooseCardBundle());
+
+        GenerateGrid(level.GridRows, level.GridColumns, _cardSelector);
     }
 
-    public void GenerateGrid(int rows, int columns)
+    public void GenerateGrid(int rows, int columns, ICardSelecting cardBundle)
     {
         float cellSizeX = _cellPrefab.transform.localScale.x;
         float cellSizeY = _cellPrefab.transform.localScale.y;
@@ -34,7 +44,11 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
             for (int y = 0; y < rows; y++)
             {               
                 GameObject newCell = Instantiate(_cellPrefab, new Vector3(currentX + (cellSizeX * x), currentY + (cellSizeY * y), 0), _cellPrefab.transform.rotation);
-                //_cells.Add(newCell);
+                _cells.Add(newCell);
+
+                CardController _cellCardContrroller = newCell.GetComponent<CardController>();
+                _cellCardContrroller.Card = cardBundle.SelectCard();
+
                 currentY += _gapBetweenCells;
             }
 
@@ -42,12 +56,7 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
         }
 
         SetGridBackgroundSize(rows, columns);
-    }
-
-    public IReadOnlyCollection<Card> GetLevelCards()
-    {
-        return _cards.AsReadOnly();
-    }
+    }    
 
     private void SetGridBackgroundSize(int rows, int columns)
     {
@@ -60,6 +69,11 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
     public int GetNumberOfLevels()
     {
         return _levels.Length;
+    }
+
+    public IReadOnlyCollection<Card> GetLevelCards()
+    {
+        return _cards.AsReadOnly();
     }
 }
 

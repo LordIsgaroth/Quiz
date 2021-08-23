@@ -29,3 +29,13 @@ MonoBehaviour:
     _sprite: {fileID: -2756605603065543306, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
   - _identifier: I
     _sprite: {fileID: -3541686595128163680, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
+  - _identifier: E
+    _sprite: {fileID: 4652326554734856401, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
+  - _identifier: H
+    _sprite: {fileID: -8235857483100294123, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
+  - _identifier: K
+    _sprite: {fileID: -1127063002332224934, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
+  - _identifier: L
+    _sprite: {fileID: -5901097786099144959, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
+  - _identifier: M
+    _sprite: {fileID: 3295844289267200183, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
