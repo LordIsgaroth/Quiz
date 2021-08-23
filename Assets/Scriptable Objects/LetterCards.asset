@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09cfd91cb2c9a4248a49841fc28ca070, type: 3}
-  m_Name: Letters
+  m_Name: LetterCards
   m_EditorClassIdentifier: 
-  _cardData:
+  _cards:
   - _identifier: A
     _sprite: {fileID: 4963718625464178563, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
   - _identifier: B
@@ -23,5 +23,9 @@ MonoBehaviour:
     _sprite: {fileID: 7911670913450602933, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
   - _identifier: F
     _sprite: {fileID: -6426668015567183463, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
+  - _identifier: G
+    _sprite: {fileID: 216406037199867053, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
   - _identifier: J
     _sprite: {fileID: -2756605603065543306, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
+  - _identifier: I
+    _sprite: {fileID: -3541686595128163680, guid: 69756c6097729c044a2f6b8a75058641, type: 3}

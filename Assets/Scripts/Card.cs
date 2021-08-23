@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class CardData
+public class Card
 {
     [SerializeField] private string _identifier;
     [SerializeField] private Sprite  _sprite;
