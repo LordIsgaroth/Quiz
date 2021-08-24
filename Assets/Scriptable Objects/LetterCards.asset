@@ -39,3 +39,29 @@ MonoBehaviour:
     _sprite: {fileID: -5901097786099144959, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
   - _identifier: M
     _sprite: {fileID: 3295844289267200183, guid: 69756c6097729c044a2f6b8a75058641, type: 3}
+  - _identifier: R
+    _sprite: {fileID: -6342808464625005154, guid: 82c6d1ea8e0095d4e85e27c6eacbe239, type: 3}
+  - _identifier: S
+    _sprite: {fileID: 8083504644574312765, guid: 82c6d1ea8e0095d4e85e27c6eacbe239, type: 3}
+  - _identifier: U
+    _sprite: {fileID: 3270655726746431581, guid: 82c6d1ea8e0095d4e85e27c6eacbe239, type: 3}
+  - _identifier: V
+    _sprite: {fileID: -2983290644488427326, guid: 82c6d1ea8e0095d4e85e27c6eacbe239, type: 3}
+  - _identifier: O
+    _sprite: {fileID: 5433449995169814141, guid: 82c6d1ea8e0095d4e85e27c6eacbe239, type: 3}
+  - _identifier: Q
+    _sprite: {fileID: -4447791616812998045, guid: 82c6d1ea8e0095d4e85e27c6eacbe239, type: 3}
+  - _identifier: W
+    _sprite: {fileID: -9165466868132007793, guid: 82c6d1ea8e0095d4e85e27c6eacbe239, type: 3}
+  - _identifier: T
+    _sprite: {fileID: -4461999128152558772, guid: 82c6d1ea8e0095d4e85e27c6eacbe239, type: 3}
+  - _identifier: N
+    _sprite: {fileID: 7112752472869403061, guid: 82c6d1ea8e0095d4e85e27c6eacbe239, type: 3}
+  - _identifier: P
+    _sprite: {fileID: -4252152113809563852, guid: 82c6d1ea8e0095d4e85e27c6eacbe239, type: 3}
+  - _identifier: X
+    _sprite: {fileID: 4461586319009975920, guid: 82c6d1ea8e0095d4e85e27c6eacbe239, type: 3}
+  - _identifier: Y
+    _sprite: {fileID: -5001085640463096552, guid: 64d439da8744c7b40bb77a049e72c89f, type: 3}
+  - _identifier: Z
+    _sprite: {fileID: 3539555106843919260, guid: 64d439da8744c7b40bb77a049e72c89f, type: 3}

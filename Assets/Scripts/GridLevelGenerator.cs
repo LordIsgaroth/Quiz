@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 [RequireComponent(typeof(ICardBundleGetter))]
@@ -10,8 +11,8 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
     [SerializeField] private float _gapBetweenCells;
 
     private ICardBundleGetter _cardBundleGetter;
+    private ICardSelecting _cardSelector;
     private List<GameObject> _cells = new List<GameObject>();
-    private List<Card> _cards = new List<Card>();
 
     public void Awake()
     {
@@ -21,7 +22,7 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
     public void CreateLevel(int number)
     {
         GridLevelData level = _levels[number];
-        ICardSelecting _cardSelector = new RandomUniqueCardSelector(_cardBundleGetter.ChooseCardBundle());
+        _cardSelector = new RandomUniqueCardSelector(_cardBundleGetter.ChooseCardBundle());
 
         GenerateGrid(level.GridRows, level.GridColumns, _cardSelector);
     }
@@ -71,9 +72,9 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
         return _levels.Length;
     }
 
-    public IReadOnlyCollection<Card> GetLevelCards()
+    public List<Card> GetLevelCards()
     {
-        return _cards.AsReadOnly();
+        return _cardSelector.GetAllSelectedCards();
     }
 }
 

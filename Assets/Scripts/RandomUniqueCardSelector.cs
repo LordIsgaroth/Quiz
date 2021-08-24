@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 public class RandomUniqueCardSelector : ICardSelecting
@@ -34,8 +35,8 @@ public class RandomUniqueCardSelector : ICardSelecting
         return selectedCard;
     }
 
-    public IReadOnlyCollection<Card> GetAllSelectedCards()
+    public List<Card> GetAllSelectedCards()
     {
-        return _selectedCards.AsReadOnly();
+        return _selectedCards;
     }
 }
