@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class CardController : MonoBehaviour
@@ -9,6 +9,8 @@ public class CardController : MonoBehaviour
 
     private SpriteRenderer _backgroundSpriteRenderer;
     private Card _card;
+
+    public UnityEvent<Card> OnCardChoose = new UnityEvent<Card>();
 
     public Card Card
     {
@@ -30,5 +32,10 @@ public class CardController : MonoBehaviour
     private void ChooseBackgroundColor()
     {
         _backgroundSpriteRenderer.color = new Color(70.0f / 100.0f, 170.0f / 100.0f, 160.0f / 100.0f);
+    }
+
+    public void ChooseCard()
+    {
+        OnCardChoose.Invoke(_card);
     }
 }

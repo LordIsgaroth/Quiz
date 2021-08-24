@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(ICardBundleGetter))]
 public class GridLevelGenerator : MonoBehaviour, ILevelCreation
@@ -12,6 +12,7 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
 
     private ICardBundleGetter _cardBundleGetter;
     private ICardSelecting _cardSelector;
+    private UnityAction<Card> _cardChooseDispatcher;
     private List<GameObject> _cells = new List<GameObject>();
 
     public void Awake()
@@ -19,16 +20,20 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
         _cardBundleGetter = GetComponent<ICardBundleGetter>();
     }
 
-    public void CreateLevel(int number)
+    public void CreateLevel(int number, UnityAction<Card> cardChooseDispatcher)
     {
         GridLevelData level = _levels[number];
         _cardSelector = new RandomUniqueCardSelector(_cardBundleGetter.ChooseCardBundle());
+        _cardChooseDispatcher = cardChooseDispatcher;
 
-        GenerateGrid(level.GridRows, level.GridColumns, _cardSelector);
+        GenerateGrid(level);
     }
 
-    public void GenerateGrid(int rows, int columns, ICardSelecting cardBundle)
+    public void GenerateGrid(GridLevelData level)
     {
+        int rows = level.GridRows;
+        int columns = level.GridColumns;
+
         float cellSizeX = _cellPrefab.transform.localScale.x;
         float cellSizeY = _cellPrefab.transform.localScale.y;
 
@@ -48,7 +53,8 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
                 _cells.Add(newCell);
 
                 CardController _cellCardContrroller = newCell.GetComponent<CardController>();
-                _cellCardContrroller.Card = cardBundle.SelectCard();
+                _cellCardContrroller.Card = _cardSelector.SelectCard();
+                _cellCardContrroller.OnCardChoose.AddListener(_cardChooseDispatcher);
 
                 currentY += _gapBetweenCells;
             }
@@ -75,6 +81,6 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
     public List<Card> GetLevelCards()
     {
         return _cardSelector.GetAllSelectedCards();
-    }
+    }    
 }
 
