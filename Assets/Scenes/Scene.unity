@@ -633,6 +633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardBundles:
   - {fileID: 11400000, guid: da86c562f0a3a5c41bf8efbf7c495c99, type: 2}
+  - {fileID: 11400000, guid: 27a87a8ebe295074099059d30467126a, type: 2}
 --- !u!114 &1697496651
 MonoBehaviour:
   m_ObjectHideFlags: 0

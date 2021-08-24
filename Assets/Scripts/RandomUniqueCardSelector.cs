@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using UnityEngine;
 
 public class RandomUniqueCardSelector : ICardSelecting
@@ -15,6 +13,17 @@ public class RandomUniqueCardSelector : ICardSelecting
 
     public Card SelectCard()
     {
+        return SelectFromBundle();
+    }
+
+    public Card SelectCard(List<Card> cardsToExclude)
+    {
+        _selectedCards.AddRange(cardsToExclude);
+        return SelectFromBundle();
+    }
+
+    private Card SelectFromBundle()
+    {
         if (_selectedCards.Count >= _cardBundle.CardData.Length) throw new System.Exception("Not enough cards to choose");
 
         Card selectedCard = null;
@@ -27,7 +36,7 @@ public class RandomUniqueCardSelector : ICardSelecting
 
             if (!_selectedCards.Contains(randomCard))
             {
-               selectedCard = randomCard;
+                selectedCard = randomCard;
                 _selectedCards.Add(selectedCard);
             }
         }
