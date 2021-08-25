@@ -6,10 +6,12 @@ using UnityEngine.Events;
 [RequireComponent(typeof(ILevelCreation))]
 public class LevelChanging : MonoBehaviour
 {        
-    [SerializeField] private InterfaceUpdater _interfaceUpdater;
+    [SerializeField] private GoalTextController _goalTextController;
+    [SerializeField] private LoadingPanelController _loadingPanelController;
     [SerializeField] private float _delayBeforeLevelChange;
 
     private int _currentLevel = 1;
+    private bool _inputAllowed = false;
     
     private ILevelCreation _levelCreator;
     private UnityAction<CellController> _cardChooseDispatcher;
@@ -34,11 +36,12 @@ public class LevelChanging : MonoBehaviour
         SelectGoal(_levelCreator.GetLevelCards());
 
         if (_currentLevel == 1)
-        {            
-            _interfaceUpdater.GoalTextFadeIn();
+        {
+            _goalTextController.GoalTextFadeIn();
         } 
 
         _currentLevel++;
+        _inputAllowed = true;
     }
 
     private bool HasNextLevel()
@@ -51,31 +54,42 @@ public class LevelChanging : MonoBehaviour
     {
         _currentGoal = cards[Random.Range(0, cards.Count)];
         _selectedGoals.Add(_currentGoal);
-        _interfaceUpdater.SetGoalText($"Find {_currentGoal.Identifier}");
+        _goalTextController.SetGoalText($"Find {_currentGoal.Identifier}");
     }
 
     private void ChooseCard(CellController cellContrroller)
     {
-        if (cellContrroller.Card.Identifier == _currentGoal.Identifier)
-        {
-            Debug.Log("Correct!");
+        if (!_inputAllowed) return;
 
-            StartCoroutine(DisplayCorrectChose(cellContrroller));            
+        if (cellContrroller.Card.Identifier == _currentGoal.Identifier)
+        {            
+            StartCoroutine(DisplayCorrectChose(cellContrroller));
         }
         else
-        {
-            Debug.Log("Incorrect");
+        {            
             cellContrroller.CellEaseInBounce();
         }            
     }
 
     private IEnumerator DisplayCorrectChose(CellController cellContrroller)
     {
+        _inputAllowed = false;
         cellContrroller.ContentBounce();
         _particleDisplayer.DisplayParticles(cellContrroller.gameObject);
 
         yield return new WaitForSeconds(_delayBeforeLevelChange);
 
         if (HasNextLevel()) LoadNextLevel();
-    }        
+        else GameOver();
+    }
+
+    private void GameOver()
+    {
+        _loadingPanelController.EndGameLoading();
+    }
+
+    //private IEnumerator DisplayEndGameInterface()
+    //{
+    //    yield return new WaitForSeconds(_delayBeforeLevelChange);
+    //}
 }
