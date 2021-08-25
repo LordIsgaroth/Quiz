@@ -26,9 +26,9 @@ MonoBehaviour:
   - _identifier: 6
     _sprite: {fileID: -7015292045520539579, guid: dc87c369c9028e847af21a5edfacf72c, type: 3}
   - _identifier: 7
-    _sprite: {fileID: -675344402919758444, guid: dc87c369c9028e847af21a5edfacf72c, type: 3}
+    _sprite: {fileID: 5264086625717305761, guid: a4241cb7a8827de46a3f0437019887cb, type: 3}
   - _identifier: 8
-    _sprite: {fileID: 3547489320769246608, guid: dc87c369c9028e847af21a5edfacf72c, type: 3}
+    _sprite: {fileID: 4224984626537299074, guid: a4241cb7a8827de46a3f0437019887cb, type: 3}
   - _identifier: 9
     _sprite: {fileID: -1155199509967091035, guid: 93e5f5a3b7f97a24cb25dad36ea0ce1b, type: 3}
   - _identifier: 10

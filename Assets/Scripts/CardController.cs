@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class CardController : MonoBehaviour
@@ -25,7 +26,7 @@ public class CardController : MonoBehaviour
     private void Start()
     {
         _backgroundSpriteRenderer = GetComponent<SpriteRenderer>();
-        ChooseBackgroundColor();
+        ChooseBackgroundColor();        
     }
 
     private void ChooseBackgroundColor()
@@ -36,5 +37,10 @@ public class CardController : MonoBehaviour
     public void ChooseCard()
     {
         OnCardChoose.Invoke(_card);
+    }
+
+    public void Bounce()
+    {
+        transform.DOPunchScale(new Vector3(0.2f, 0.2f), 1f, 5, 0.5f);            
     }
 }

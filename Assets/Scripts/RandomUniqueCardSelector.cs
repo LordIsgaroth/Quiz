@@ -4,7 +4,9 @@ using UnityEngine;
 public class RandomUniqueCardSelector : ICardSelecting
 {
     private List<Card> _selectedCards = new List<Card>();
+    private List<Card> _cardsToExclude = new List<Card>();
     private CardBundle _cardBundle;
+
 
     public RandomUniqueCardSelector(CardBundle cardBundle)
     {
@@ -17,14 +19,14 @@ public class RandomUniqueCardSelector : ICardSelecting
     }
 
     public Card SelectCard(List<Card> cardsToExclude)
-    {
-        _selectedCards.AddRange(cardsToExclude);
+    {        
+        _cardsToExclude = cardsToExclude;
         return SelectFromBundle();
     }
 
     private Card SelectFromBundle()
     {
-        if (_selectedCards.Count >= _cardBundle.CardData.Length) throw new System.Exception("Not enough cards to choose");
+        if ((_selectedCards.Count + _cardsToExclude.Count) >= _cardBundle.CardData.Length) throw new System.Exception("Not enough cards to choose");
 
         Card selectedCard = null;
 
@@ -34,7 +36,7 @@ public class RandomUniqueCardSelector : ICardSelecting
 
             Card randomCard = _cardBundle.CardData[randomIndex];
 
-            if (!_selectedCards.Contains(randomCard))
+            if (!_selectedCards.Contains(randomCard) && !_cardsToExclude.Contains(randomCard))
             {
                 selectedCard = randomCard;
                 _selectedCards.Add(selectedCard);

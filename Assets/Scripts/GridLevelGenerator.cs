@@ -10,6 +10,7 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
     [SerializeField] private SpriteRenderer _gridBackground;
     [SerializeField] private float _gapBetweenCells;
 
+    private bool _createWithAnimation;
     private ICardBundleGetter _cardBundleGetter;
     private ICardSelecting _cardSelector;
     private UnityAction<Card> _cardChooseDispatcher;
@@ -28,6 +29,9 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
         _cardChooseDispatcher = cardChooseDispatcher;
         _cardsToExclude = cardsToExclude;
 
+        if (number == 1) _createWithAnimation = true;
+        else _createWithAnimation = false;
+
         ClearCurrentLevel();
         GenerateGrid(level);
     }
@@ -36,6 +40,8 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
     {
         int rows = level.GridRows;
         int columns = level.GridColumns;
+
+        SetGridBackgroundSize(rows, columns);
 
         float cellSizeX = _cellPrefab.transform.localScale.x;
         float cellSizeY = _cellPrefab.transform.localScale.y;
@@ -56,16 +62,16 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
                 _cells.Add(newCell);
 
                 CardController cellCardContrroller = newCell.GetComponent<CardController>();
-                cellCardContrroller.Card = _cardSelector.SelectCard();
+                cellCardContrroller.Card = _cardSelector.SelectCard(_cardsToExclude);
                 cellCardContrroller.OnCardChoose.AddListener(_cardChooseDispatcher);
+
+                if (_createWithAnimation) cellCardContrroller.Bounce();
 
                 currentY += _gapBetweenCells;
             }
 
             currentX += _gapBetweenCells;            
-        }
-
-        SetGridBackgroundSize(rows, columns);
+        }        
     }    
 
     private void SetGridBackgroundSize(int rows, int columns)
