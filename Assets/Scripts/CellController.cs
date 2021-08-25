@@ -39,12 +39,17 @@ public class CellController : MonoBehaviour
         OnCardChoose.Invoke(this);
     }
 
-    public void Bounce()
+    public void CellBounce()
     {
-        transform.DOPunchScale(new Vector3(0.2f, 0.2f), 1f, 5, 0.5f);            
+        transform.DOPunchScale(new Vector3(0.2f, 0.2f), 1f, 5, 0.5f);
     }
 
-    public void EaseInBounce()
+    public void ContentBounce()
+    {
+        _cardSpriteRenderer.transform.DOPunchScale(new Vector3(0.2f, 0.2f), 1f, 5, 0.5f);
+    }
+
+    public void CellEaseInBounce()
     {
         transform.DOPunchPosition(new Vector3(0.2f, 0, 0), 1f, 5);
     }    

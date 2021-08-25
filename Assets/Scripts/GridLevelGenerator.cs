@@ -65,7 +65,7 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
                 cellContrroller.Card = _cardSelector.SelectCard(_cardsToExclude);
                 cellContrroller.OnCardChoose.AddListener(_cardChooseDispatcher);
 
-                if (_createWithAnimation) cellContrroller.Bounce();
+                if (_createWithAnimation) cellContrroller.CellBounce();
 
                 currentY += _gapBetweenCells;
             }
