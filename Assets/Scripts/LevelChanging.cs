@@ -9,7 +9,7 @@ public class LevelChanging : MonoBehaviour
     
     private int _currentLevel = 1;
     private ILevelCreation _levelCreator;
-    private UnityAction<Card> _cardChooseDispatcher;
+    private UnityAction<CellController> _cardChooseDispatcher;
     private Card _currentGoal;
     private List<Card> _selectedGoals = new List<Card>();
 
@@ -43,13 +43,17 @@ public class LevelChanging : MonoBehaviour
         _interfaceUpdater.SetGoalText($"Find {_currentGoal.Identifier}");
     }
 
-    private void ChooseCard(Card card)
+    private void ChooseCard(CellController cellContrroller)
     {
-        if (card.Identifier == _currentGoal.Identifier)
+        if (cellContrroller.Card.Identifier == _currentGoal.Identifier)
         {
             Debug.Log("Correct!");
             if (HasNextLevel()) LoadNextLevel();
         }
-        else Debug.Log("Incorrect");
+        else
+        {
+            Debug.Log("Incorrect");
+            cellContrroller.EaseInBounce();
+        }            
     }
 }

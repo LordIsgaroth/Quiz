@@ -22,11 +22,11 @@ public class PlayerInput : MonoBehaviour
 
     private void ProcessRaycastHit(RaycastHit2D raycastHit)
     {
-        CardController cardController;
+        CellController cellController;
 
-        if(raycastHit.transform.TryGetComponent(out cardController))
+        if(raycastHit.transform.TryGetComponent(out cellController))
         {
-            cardController.ChooseCard();
+            cellController.ChooseCard();
         }
     }
 }

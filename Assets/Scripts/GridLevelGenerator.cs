@@ -13,7 +13,7 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
     private bool _createWithAnimation;
     private ICardBundleGetter _cardBundleGetter;
     private ICardSelecting _cardSelector;
-    private UnityAction<Card> _cardChooseDispatcher;
+    private UnityAction<CellController> _cardChooseDispatcher;
     private List<Card> _cardsToExclude;
     private List<GameObject> _cells = new List<GameObject>();
 
@@ -22,7 +22,7 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
         _cardBundleGetter = GetComponent<ICardBundleGetter>();
     }
 
-    public void CreateLevel(int number, List<Card> cardsToExclude, UnityAction<Card> cardChooseDispatcher)
+    public void CreateLevel(int number, List<Card> cardsToExclude, UnityAction<CellController> cardChooseDispatcher)
     {
         GridLevelData level = _levels[number - 1];
         _cardSelector = new RandomUniqueCardSelector(_cardBundleGetter.ChooseCardBundle());
@@ -61,11 +61,11 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
                 GameObject newCell = Instantiate(_cellPrefab, new Vector3(currentX + (cellSizeX * x), currentY + (cellSizeY * y), 0), _cellPrefab.transform.rotation);
                 _cells.Add(newCell);
 
-                CardController cellCardContrroller = newCell.GetComponent<CardController>();
-                cellCardContrroller.Card = _cardSelector.SelectCard(_cardsToExclude);
-                cellCardContrroller.OnCardChoose.AddListener(_cardChooseDispatcher);
+                CellController cellContrroller = newCell.GetComponent<CellController>();
+                cellContrroller.Card = _cardSelector.SelectCard(_cardsToExclude);
+                cellContrroller.OnCardChoose.AddListener(_cardChooseDispatcher);
 
-                if (_createWithAnimation) cellCardContrroller.Bounce();
+                if (_createWithAnimation) cellContrroller.Bounce();
 
                 currentY += _gapBetweenCells;
             }
@@ -86,8 +86,8 @@ public class GridLevelGenerator : MonoBehaviour, ILevelCreation
     {
         foreach(GameObject cell in _cells)
         {
-            CardController cellCardContrroller = cell.GetComponent<CardController>();
-            cellCardContrroller.OnCardChoose.RemoveListener(_cardChooseDispatcher);
+            CellController cellContrroller = cell.GetComponent<CellController>();
+            cellContrroller.OnCardChoose.RemoveListener(_cardChooseDispatcher);
             Destroy(cell);
         }
 

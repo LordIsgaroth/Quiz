@@ -7,7 +7,6 @@ public class RandomUniqueCardSelector : ICardSelecting
     private List<Card> _cardsToExclude = new List<Card>();
     private CardBundle _cardBundle;
 
-
     public RandomUniqueCardSelector(CardBundle cardBundle)
     {
         _cardBundle = cardBundle;
