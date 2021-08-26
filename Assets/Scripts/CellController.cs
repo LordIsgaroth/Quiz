@@ -35,10 +35,10 @@ public class CellController : MonoBehaviour
     private void Start()
     {
         _backgroundSpriteRenderer = GetComponent<SpriteRenderer>();
-        ChooseBackgroundColor();        
+        SetBackgroundColor();
     }
 
-    private void ChooseBackgroundColor()
+    private void SetBackgroundColor()
     {
         ColorOption colorOption = GetColorOption();
 
@@ -47,20 +47,20 @@ public class CellController : MonoBehaviour
         switch (colorOption)
         {
             case ColorOption.blue:
-                color = new Color(70.0f / 100.0f, 170.0f / 100.0f, 160.0f / 100.0f);
+                color = new Color(100f / 255f, 215f / 255f, 200f / 255f);
                 break;
             case ColorOption.orange:
-                color = new Color(230.0f / 100.0f, 175.0f / 100.0f, 120.0f / 100.0f);
+                color = new Color(255f / 255f, 180f / 255f, 100f / 255f);
                 break;
             case ColorOption.pink:
-                color = new Color(70.0f / 100.0f, 170.0f / 100.0f, 160.0f / 100.0f);
+                color = new Color(240f / 255f, 185f / 255f, 240f / 255f);
                 break;
             case ColorOption.yellow:
-                color = new Color(70.0f / 100.0f, 170.0f / 100.0f, 160.0f / 100.0f);
+                color = new Color(255f / 255f, 240f / 255f, 130f / 255f);
                 break;
         }
 
-        _backgroundSpriteRenderer.color = new Color(230.0f, 175.0f, 120.0f);
+        _backgroundSpriteRenderer.color = color;
     }
 
     private ColorOption GetColorOption()

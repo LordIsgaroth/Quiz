@@ -92,10 +92,18 @@ public class LevelChanging : MonoBehaviour
 
     public void Restart()
     {
+        StartCoroutine(LoadNewGame());        
+    }
+
+    private IEnumerator LoadNewGame()
+    {
         _restartButtonController.SetVisibility(false);
         _currentLevel = 1;
         _selectedGoals.Clear();
         LoadNextLevel();
-        _loadingPanelController.StartGameLoading();        
+
+        yield return new WaitForSeconds(_delayBeforeLevelChange);
+
+        _loadingPanelController.StartGameLoading();               
     }
 }
