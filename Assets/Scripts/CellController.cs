@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
+using System;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class CellController : MonoBehaviour
@@ -11,6 +12,14 @@ public class CellController : MonoBehaviour
     private Card _card;
 
     public UnityEvent<CellController> OnCardChoose = new UnityEvent<CellController>();
+
+    private enum ColorOption
+    {
+        pink = 0,
+        yellow = 1,
+        blue = 2,
+        orange = 3
+    }
 
     public Card Card
     {
@@ -31,7 +40,32 @@ public class CellController : MonoBehaviour
 
     private void ChooseBackgroundColor()
     {
-        _backgroundSpriteRenderer.color = new Color(70.0f / 100.0f, 170.0f / 100.0f, 160.0f / 100.0f);
+        ColorOption colorOption = GetColorOption();
+
+        Color color = Color.white;
+
+        switch (colorOption)
+        {
+            case ColorOption.blue:
+                color = new Color(70.0f / 100.0f, 170.0f / 100.0f, 160.0f / 100.0f);
+                break;
+            case ColorOption.orange:
+                color = new Color(230.0f / 100.0f, 175.0f / 100.0f, 120.0f / 100.0f);
+                break;
+            case ColorOption.pink:
+                color = new Color(70.0f / 100.0f, 170.0f / 100.0f, 160.0f / 100.0f);
+                break;
+            case ColorOption.yellow:
+                color = new Color(70.0f / 100.0f, 170.0f / 100.0f, 160.0f / 100.0f);
+                break;
+        }
+
+        _backgroundSpriteRenderer.color = new Color(230.0f, 175.0f, 120.0f);
+    }
+
+    private ColorOption GetColorOption()
+    {
+        return (ColorOption)Enum.GetValues(typeof(ColorOption)).GetValue(UnityEngine.Random.Range(0, 4));
     }
 
     public void ChooseCard()

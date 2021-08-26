@@ -8,6 +8,7 @@ public class LevelChanging : MonoBehaviour
 {        
     [SerializeField] private GoalTextController _goalTextController;
     [SerializeField] private LoadingPanelController _loadingPanelController;
+    [SerializeField] private RestartButtonController _restartButtonController;
     [SerializeField] private float _delayBeforeLevelChange;
 
     private int _currentLevel = 1;
@@ -86,10 +87,15 @@ public class LevelChanging : MonoBehaviour
     private void GameOver()
     {
         _loadingPanelController.EndGameLoading();
+        _restartButtonController.SetVisibility(true);
     }
 
-    //private IEnumerator DisplayEndGameInterface()
-    //{
-    //    yield return new WaitForSeconds(_delayBeforeLevelChange);
-    //}
+    public void Restart()
+    {
+        _restartButtonController.SetVisibility(false);
+        _currentLevel = 1;
+        _selectedGoals.Clear();
+        LoadNextLevel();
+        _loadingPanelController.StartGameLoading();        
+    }
 }

@@ -27,6 +27,6 @@ public class LoadingPanelController : MonoBehaviour
     public void StartGameLoading()
     {
         _image.color = Color.white;
-        _fadeController.FadeIn(_canvasGroup, _fadeDuration);
+        _fadeController.FadeOut(_canvasGroup, _fadeDuration);
     }
 }
