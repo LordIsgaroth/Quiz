@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// ”правл€ет сменой уровней
+/// </summary>
 [RequireComponent(typeof(ILevelCreation))]
 public class LevelChanging : MonoBehaviour
 {        

@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Случайный выбор карточки из набора. Обеспечивает уникальность выбранных карточек
+/// </summary>
 public class RandomUniqueCardSelector : ICardSelecting
 {
     private List<Card> _selectedCards = new List<Card>();
@@ -10,12 +13,7 @@ public class RandomUniqueCardSelector : ICardSelecting
     public RandomUniqueCardSelector(CardBundle cardBundle)
     {
         _cardBundle = cardBundle;
-    }
-
-    public Card SelectCard()
-    {
-        return SelectFromBundle();
-    }
+    }    
 
     public Card SelectCard(List<Card> cardsToExclude)
     {        

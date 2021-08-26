@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class CardBundleManager : MonoBehaviour, ICardBundleGetter
+/// <summary>
+/// Случайный выбор набора карточек
+/// </summary>
+public class RandomCardBundleSelector : MonoBehaviour, ICardBundleGetter
 {
     [SerializeField] private CardBundle[] _cardBundles;
 

@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine.Events;
 
+/// <summary>
+/// Интерфейс создания уровня
+/// </summary>
 public interface ILevelCreation
 {    
     public int GetNumberOfLevels();

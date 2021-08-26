@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// Карточка
+/// </summary>
 [Serializable]
 public class Card
 {

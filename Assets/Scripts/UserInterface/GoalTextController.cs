@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// ”правление выводом цели уровн€
+/// </summary>
 [RequireComponent(typeof(CanvasGroup))]
 public class GoalTextController : MonoBehaviour
 {

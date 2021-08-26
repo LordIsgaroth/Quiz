@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// —оздание уровн€ - сетки €чеек
+/// </summary>
 [RequireComponent(typeof(ICardBundleGetter))]
 public class GridLevelGenerator : MonoBehaviour, ILevelCreation
 {

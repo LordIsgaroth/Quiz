@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Обработка пользовательского ввода
+/// </summary>
 public class PlayerInput : MonoBehaviour
 {
     private Vector2 _currentMousePosition;

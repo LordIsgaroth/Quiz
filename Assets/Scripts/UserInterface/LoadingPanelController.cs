@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Управление фоном загрузки
+/// </summary>
 [RequireComponent(typeof(Image))]
 [RequireComponent(typeof(CanvasGroup))]
 public class LoadingPanelController : MonoBehaviour

@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// Данные уровня - сетки ячеек
+/// </summary>
 [Serializable]
 public struct GridLevelData
 {

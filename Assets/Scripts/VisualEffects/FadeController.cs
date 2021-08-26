@@ -1,6 +1,9 @@
 using UnityEngine;
 using DG.Tweening;
 
+/// <summary>
+/// Управление FadeIn/FadeOut эффектами элементов интерфейса
+/// </summary>
 public class FadeController : IFadeControl
 {
     public void FadeIn(CanvasGroup canvasGroup, float duration)

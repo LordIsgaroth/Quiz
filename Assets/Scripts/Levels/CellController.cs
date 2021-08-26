@@ -3,6 +3,9 @@ using UnityEngine.Events;
 using DG.Tweening;
 using System;
 
+/// <summary>
+/// ”правление €чейкой, содержащей карточку
+/// </summary>
 [RequireComponent(typeof(SpriteRenderer))]
 public class CellController : MonoBehaviour
 {
